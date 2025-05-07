@@ -68,11 +68,8 @@ function Navbar() {
         role="button"
         className="btn btn-ghost btn-circle avatar"
       >
-        <div className="w-10 rounded-full">
-          <img
-            src={user.photoURL || "/default-profile.png"}
-            alt="User Profile"
-          />
+        <div className="h-10 w-10 rounded-full">
+          <img src={user.photoURL} alt="User Profile" />
         </div>
       </div>
       <ul

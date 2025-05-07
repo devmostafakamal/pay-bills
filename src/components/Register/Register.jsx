@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
@@ -29,10 +30,11 @@ function Register() {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const photoUrl = e.target.photoURL.value;
 
     // reset errorMessage
     setErrorMessage("");
-    console.log(name, email, password);
+    // console.log(name, email, password);
     const hasUpperCase = /[A-Z]/.test(password);
     const hasLowerCase = /[a-z]/.test(password);
     const hasMinLength = password.length >= 6;
@@ -59,11 +61,21 @@ function Register() {
     //   });
     createUser(email, password)
       .then((result) => {
-        console.log(result);
+        const user = result.user;
+
+        // ✅ Properly update the profile
+        return updateProfile(user, {
+          displayName: name,
+          photoURL: photoUrl,
+        });
+      })
+      .then(() => {
+        // ✅ Only navigate after profile update
         navigate("/");
       })
-      .then((error) => {
-        console.log(error);
+      .catch((error) => {
+        console.error("Registration error:", error);
+        setErrorMessage(error.message);
       });
   };
   return (

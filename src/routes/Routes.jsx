@@ -6,6 +6,7 @@ import MyProfile from "../components/MyProfile/MyProfile";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyProfile></MyProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
           </PrivateRoute>
         ),
       },
