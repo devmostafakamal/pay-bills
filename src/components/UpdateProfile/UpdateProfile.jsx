@@ -5,21 +5,27 @@ import { auth } from "../../firebase.init";
 import { useNavigate } from "react-router";
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  console.log(user);
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
   const [message, setMessage] = useState("");
-
+  console.log(name, photoURL);
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
       await updateProfile(auth.currentUser, {
         displayName: name,
         photoURL: photoURL,
-      });
-      setMessage("Profile updated successfully!");
+      })
+        .then(() => {
+          setMessage("Profile updated successfully!");
+          setUser({ ...user, displayName: name, photoURL: photoURL });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       navigate("/profile");
     } catch (error) {
       setMessage("Error updating profile: " + error.message);

@@ -11,9 +11,11 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   // onAuthStateChanged(auth, (currentUser) => {
@@ -38,6 +40,7 @@ function AuthProvider({ children }) {
     user,
     createUser,
     signInUser,
+    setUser,
   };
   return <AuthContext value={userInfo}>{children}</AuthContext>;
 }

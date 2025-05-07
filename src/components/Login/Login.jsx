@@ -4,7 +4,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { auth } from "../../firebase.init";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -12,6 +12,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 function Login() {
   const { signInUser } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState();
+  const location = useLocation();
+  console.log(location);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
   const handleGoogleSignIn = () => {
@@ -42,7 +44,8 @@ function Login() {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -70,7 +73,9 @@ function Login() {
               placeholder="Password"
             />
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <Link to="/forget-password" className="link link-hover">
+                Forgot password?
+              </Link>
             </div>
             <button className="btn btn-neutral mt-4">Login</button>
             <p>
