@@ -70,7 +70,6 @@ function Register() {
         });
       })
       .then(() => {
-        // ✅ Only navigate after profile update
         navigate("/");
       })
       .catch((error) => {
@@ -80,6 +79,7 @@ function Register() {
   };
   return (
     <div>
+      <h2 className="font-bold text-center mt-4">Register</h2>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-8">
         <div className="card-body">
           <form onSubmit={handleRegister} className="fieldset">

@@ -80,7 +80,9 @@ function Navbar() {
           showProfile ? "block" : "hidden"
         }`}
       >
-        <li className="px-4 py-2">Amount:{billAmount}</li>
+        <li className="px-4 py-2 text-2xl font-semibold">
+          Amount:{billAmount}
+        </li>
         <li>
           <button
             onClick={() => auth.signOut()}

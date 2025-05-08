@@ -37,6 +37,7 @@ const PageDetails = () => {
   const paybillHnadler = () => {
     if (isPaid) {
       setShowAlreadyPaidAlert(true);
+      navigation("/bills");
       setTimeout(() => setShowAlreadyPaidAlert(false), 3000); // Hide after 3 seconds
       return;
     }
