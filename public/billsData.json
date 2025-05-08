@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "billType": "Electricity Bill",
+    "icon": "/assets/bill-type/electricity.png",
+    "organization": {
+      "name": "NESCO",
+      "icon": "/assets/organization/nesco.jpg"
+    },
+
+    "amount": 1890,
+    "dueDate": "June 4, 2025"
+  },
+  {
+    "id": 2,
+    "billType": "Gas Bill",
+    "icon": "/assets/bill-type/gas-bill.png",
+    "organization": {
+      "name": "Titas",
+      "icon": "/assets/organization/titas.png"
+    },
+
+    "amount": 1488,
+    "dueDate": "July 12, 2025"
+  },
+  {
+    "id": 3,
+    "billType": "Internet Bill",
+    "icon": "/assets/bill-type/Internet.webp",
+    "organization": {
+      "name": "Link3 ",
+      "icon": "/assets/organization/link3.png"
+    },
+
+    "amount": 1200,
+    "dueDate": "August 1, 2025"
+  },
+  {
+    "id": 4,
+    "billType": "Water Bill",
+    "icon": "/assets/bill-type/water.png",
+    "organization": {
+      "name": "WASA",
+      "icon": "/assets/organization/wasa.avif"
+    },
+
+    "amount": 950,
+    "dueDate": "September 10, 2025"
+  },
+  {
+    "id": 5,
+    "billType": "Credit card Bill",
+    "icon": "/assets/bill-type/credit-card.jpg",
+    "organization": {
+      "name": "DBBL",
+      "icon": "/assets/organization/Dbbl.jpg"
+    },
+
+    "amount": 3850,
+    "dueDate": "October 27, 2025"
+  },
+  {
+    "id": 6,
+    "billType": "Tuition Bill",
+    "icon": "/assets/bill-type/tuiton.avif",
+    "organization": {
+      "name": "shikho",
+      "icon": "/assets/organization/shikho.webp"
+    },
+
+    "amount": 7500,
+    "dueDate": "November 3, 2025"
+  },
+  {
+    "id": 7,
+    "billType": "Recharge Bill",
+    "icon": "/assets/bill-type/recharge.png",
+    "organization": {
+      "name": "GP",
+      "icon": "/assets/organization/gp.png"
+    },
+
+    "amount": 200,
+    "dueDate": "May 11, 2025"
+  },
+  {
+    "id": 8,
+    "billType": "TV Bill",
+    "icon": "/assets/bill-type/tvBill.avif",
+    "organization": {
+      "name": "Dish Network",
+      "icon": "/assets/organization/dish.png"
+    },
+
+    "amount": 450,
+    "dueDate": "June 24, 2025"
+  }
+]

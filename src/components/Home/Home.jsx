@@ -11,7 +11,7 @@ function Home() {
       <BillerCarousel></BillerCarousel>
       <Featured></Featured>
       <Testimonials></Testimonials>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

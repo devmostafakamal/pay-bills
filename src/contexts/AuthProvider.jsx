@@ -9,7 +9,9 @@ import { auth } from "../firebase.init";
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [paidBills, setPaidBills] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [billAmount, setBillAmount] = useState(10000);
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -36,6 +38,10 @@ function AuthProvider({ children }) {
     };
   }, []);
   const userInfo = {
+    paidBills,
+    setPaidBills,
+    billAmount,
+    setBillAmount,
     loading,
     user,
     createUser,

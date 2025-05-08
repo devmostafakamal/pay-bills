@@ -15,23 +15,18 @@ function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white">
-                  About Us
+                <Link to="/" className="text-gray-400 hover:text-white">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-white">
-                  Services
+                <Link to="/bills" className="text-gray-400 hover:text-white">
+                  Bills
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-400 hover:text-white">
-                  FAQ
+                <Link to="/profile" className="text-gray-400 hover:text-white">
+                  Profile
                 </Link>
               </li>
             </ul>
@@ -39,29 +34,10 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Billers</h4>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/electricity"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Electricity
-                </Link>
-              </li>
-              <li>
-                <Link to="/water" className="text-gray-400 hover:text-white">
-                  Water
-                </Link>
-              </li>
-              <li>
-                <Link to="/gas" className="text-gray-400 hover:text-white">
-                  Gas
-                </Link>
-              </li>
-              <li>
-                <Link to="/telecom" className="text-gray-400 hover:text-white">
-                  Telecom
-                </Link>
-              </li>
+              <li className="text-gray-400 hover:text-white">Electricity</li>
+              <li className="text-gray-400 hover:text-white"> Water</li>
+              <li className="text-gray-400 hover:text-white">Gas</li>
+              <li className="text-gray-400 hover:text-white">Telecom</li>
             </ul>
           </div>
           <div>

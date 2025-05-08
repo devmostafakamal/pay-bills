@@ -8,6 +8,7 @@ import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import ForgetPassword from "../components/ForgetPassword/ForgetPassword";
+import PageDetails from "../components/Bills/PageDetails";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,9 +20,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bills",
+        loader: () => fetch("../billsData.json"),
         element: (
           <PrivateRoute>
             <Bills></Bills>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "pageDetails/:id",
+
+        element: (
+          <PrivateRoute>
+            {" "}
+            <PageDetails></PageDetails>{" "}
           </PrivateRoute>
         ),
       },

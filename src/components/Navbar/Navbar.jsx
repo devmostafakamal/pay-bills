@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
 import { auth } from "../../firebase.init";
+import { RxCross1 } from "react-icons/rx";
 
 function Navbar() {
-  const { user } = useContext(AuthContext);
+  const { user, billAmount } = useContext(AuthContext);
+  const [showProfile, setShowProfile] = useState(true);
 
   const commonLinks = (
     <>
@@ -62,24 +64,34 @@ function Navbar() {
       </button>
     </>
   ) : (
-    <div className="dropdown dropdown-end">
+    <div onClick={() => setShowProfile(!showProfile)} className=" relative">
       <div
         tabIndex={0}
         role="button"
         className="btn btn-ghost btn-circle avatar"
       >
-        <div className="h-10 w-10 rounded-full">
+        <div className="h-10 w-10 rounded-full ">
           <img src={user.photoURL} alt="User Profile" />
         </div>
       </div>
       <ul
         tabIndex={0}
-        className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+        className={`mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 absolute right-0  ${
+          showProfile ? "block" : "hidden"
+        }`}
       >
-        <li className="px-4 py-2">Balance: 10000 BDT</li>
+        <li className="px-4 py-2">Amount:{billAmount}</li>
         <li>
-          <button onClick={() => auth.signOut()} className="text-error">
+          <button
+            onClick={() => auth.signOut()}
+            className=" px-4 py-2 bg-green-500 text-black"
+          >
             Logout
+          </button>
+        </li>
+        <li>
+          <button onClick={() => setShowProfile(false)}>
+            <RxCross1 />
           </button>
         </li>
       </ul>
