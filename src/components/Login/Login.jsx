@@ -53,7 +53,7 @@ function Login() {
   };
   return (
     <div>
-      {" "}
+      {/* <img src="/assets/beautiful-illustration.avif" alt="" />{" "} */}
       <h2 className="text-center text-4xl font-bold mt-4">LogIn</h2>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-8">
         <div className="card-body">
