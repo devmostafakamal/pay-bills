@@ -9,7 +9,9 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 function Home() {
   return (
     <div>
-      <BillerCarousel></BillerCarousel>
+      <div className="bg-[#41ff81] flex items-center justify-center ">
+        <BillerCarousel></BillerCarousel>
+      </div>
       <Featured></Featured>
       <HowItWorks></HowItWorks>
       <Testimonials></Testimonials>

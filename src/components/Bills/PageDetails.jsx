@@ -55,7 +55,7 @@ const PageDetails = () => {
   };
 
   return (
-    <div className="bg-[#8affc3] p-4 flex flex-col justify-center items-center gap-3 my-8 rounded">
+    <div className="bg-[#8affc3] p-4 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-12 my-8 rounded">
       {showAlreadyPaidAlert && (
         <div className="absolute top-25 left-0 right-0 mx-auto w-max bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-2 rounded flex items-center gap-2">
           <FaExclamationTriangle />
@@ -65,7 +65,7 @@ const PageDetails = () => {
       <div>
         <img className="w-60 rounded-xl" src={organization.icon} alt="" />
       </div>
-      <div>
+      <div className="md:flex items-center gap-10">
         <h1 className="text-2xl font-bold mb-2"> {organization.name} </h1>
         <h2 className="font-extrabold text-[#0e6496]">
           {" "}

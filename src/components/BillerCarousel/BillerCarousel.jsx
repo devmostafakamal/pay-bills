@@ -34,7 +34,7 @@ function PartnerCarousel() {
     }
   }, [currentIndex]);
   return (
-    <section className="py-8 bg-gray-100">
+    <section className="py-8 md:w-11/12 w-[90%]  ">
       <h2 className="text-2xl font-bold text-center mb-6">Our Partners</h2>
       <div className="overflow-hidden px-4">
         <div
